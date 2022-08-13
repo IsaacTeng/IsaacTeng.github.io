@@ -1,3 +1,3 @@
-Website featuring my instagram [@isaacteng_maths](https://www.instagram.com/isaacteng_maths/) and more quirky projects to come!
+Website featuring my instagram [@isaactengch](https://www.instagram.com/isaactengch/) and more quirky projects to come!
 
 This page uses .less and .pug files. 
