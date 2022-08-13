@@ -1,4 +1,7 @@
 theme: jekyll-theme-minimal
 title: Isaac Teng's homepage
 description: Bookmark this to keep an eye on my project updates!
+footer-links:
+  abouts: abouts.html
+  
 avatar: /app/images/logo.jpg
