@@ -1,3 +1,1 @@
-theme: hacker
-title: Isaac Teng's homepage
-description: Bookmark this to keep an eye on my project updates!
+Website featuring my instagram [@isaacteng_maths](https://www.instagram.com/isaacteng_maths/) and more quirky projects to come!
