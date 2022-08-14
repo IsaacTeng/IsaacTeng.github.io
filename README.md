@@ -1,3 +1,4 @@
 Follow my instagram [@isaactengch](https://www.instagram.com/isaactengch/)!
+More quirky projects en route!
 
-This page uses .less and .pug files. 
+For the more tech-savvy of you, this page uses .less and .pug files. 
