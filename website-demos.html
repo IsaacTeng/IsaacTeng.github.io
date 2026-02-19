@@ -1,0 +1,113 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Add this line right here -->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Isaac Teng - Website Demos</title>
+  
+  <!-- Google Fonts for Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Central stylesheet -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <script>
+    // Tell the browser not to remember scroll positions on page refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    // Scroll to top ONLY once when the main parent page initially loads
+    window.scrollTo(0, 0);
+  </script>
+
+  <header>
+    <h1>Website Demos</h1>
+  </header>
+
+  <main class="projects-container">
+    
+    <section class="project">
+      <div class="description">
+        <h2>KOVI HK</h2>
+        <p>KOVI, founded in 2024 in Hong Kong, is a pioneering brand with a mission to promote clothing independence through innovation and accessibility. With a focus on providing high-quality sportswear, KOVI seeks to empower individuals by offering versatile and functional apparel designed for modern, active lifestyles.</p>
+        <p>Our commitment to sustainability, inclusivity, and self-expression is at the core of our brand, ensuring that our clothing is not only comfortable and durable but also adaptable to diverse needs and preferences. Whether you’re hitting the gym, enjoying outdoor activities, or simply embracing a more dynamic approach to everyday fashion, KOVI’s collections aim to inspire confidence and freedom in every movement.</p>
+        <p>At KOVI, we believe in redefining the relationship between people and their clothing, fostering a sense of independence where our customers can feel empowered to dress for their active lives without compromise.</p>
+        <a href="https://kovi.com.hk/" target="_blank" class="btn">Visit KOVI HK</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://kovi.com.hk/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="description">
+        <h2>TeacherSearch</h2>
+        <p>Our <strong>Teacher Applicational Platform (TAP)</strong> addresses inefficiencies in educator recruitment. Designed with teachers in mind, this platform eliminates the need for repetitive, manual form-filling across different schools and institutions. Instead, educators can create a comprehensive, centralised profile detailing their qualifications, experience, and teaching preferences.</p>
+        <p>Schools will then be able to search, filter, and connect directly with suitable candidates who have expressed interest in their vacancies. This approach not only saves time for teachers but also improves efficiency for school hiring processes — ultimately fostering better matches between schools and educators. The platform will be particularly beneficial for state schools facing staffing shortages, providing them with access to a broad and diverse pool of qualified candidates.</p>
+        <a href="https://teachersearch.uk/" target="_blank" class="btn">Visit TeacherSearch</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://teachersearch.uk/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="description">
+        <h2>IR-AI: Try IRMaths Helper</h2>
+        <p>This is a highly advanced, interactive and personalised AI tutor, designed to retain user memory and adapt dynamically to each student’s learning style, pace, and academic goals. Scheduled for launch in March 2026, this AI system will be integrated across all of our educational platforms including IRMaths. It will also be offered as a standalone model for institutional licensing and commercial sale.</p>
+        <p>Built on advanced natural language processing and reinforcement learning, the system provides real-time feedback, adaptive difficulty progression, and exam-focused coaching. Designed with ethical AI principles at its core, it also includes features to support SEND learners, ensuring accessibility and inclusivity for a diverse student population.</p>
+        <a href="https://irmaths.ireducation.org/chatbot/" target="_blank" class="btn">Try IRMaths Helper</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://irmaths.ireducation.org/chatbot/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="description">
+        <h2>GBA Medical</h2>
+        <p>An initiative dedicated to enhancing Hong Kong medical institutions’ understanding of Greater Bay Area policies and fostering cross-border industry collaboration to support their expansion and integration into the GBA healthcare market.</p>
+        <a href="https://gbamedical.github.io/" target="_blank" class="btn">Visit GBA Medical</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://gbamedical.github.io/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="description">
+        <h2>Photography Site</h2>
+      </div>
+      <div class="preview">
+        <iframe src="https://luiandshoots.github.io/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="view-more-container">
+    <a href="index" class="view-more-link">
+      <img src="assets/hand-pointer.png" alt="Pointer icon" class="pointer-icon" />
+      Return to Home
+    </a>
+  </div>
+
+  <footer>
+    <p>Contact me at <a href="mailto:isaacteng@ireducation.org">isaacteng@ireducation.org</a></p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/isaacteng-ch/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/ireducation/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://substack.com/@isaactengch" title="Substack" target="_blank"><i class="fa-solid fa-feather"></i></a> 
+      <a href="https://www.youtube.com/@IREducationInc" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
