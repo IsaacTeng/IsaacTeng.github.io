@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Isaac Teng - Personal Site</title>
+  
+  <!-- Google Fonts for Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Central stylesheet -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+  <script>
+    // Tell the browser not to remember scroll positions on page refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    // Scroll to top ONLY once when the main parent page initially loads
+    window.scrollTo(0, 0);
+  </script>
+
+  <header>
+    <h1>Isaac Teng (鄧哲恆)</h1>
+    <p class="header-tagline">Founder · Author · Educational Technology Developer</p>
+
+    <div class="header-bio" style="text-align: justify;">
+      <p>I am the founder and lead developer of <a href="https://ireducation.org" target="_blank">IREducation Ltd.</a>, a Hong Kong-based educational publishing and technology company whose UK activities are developed through Oxford Advanced Learning. I lead product strategy, software architecture, and curriculum development across IRMaths and IREducation’s wider print and digital portfolio. I am also an MSci Mathematics and Physics student at <a href="https://ucl.ac.uk" target="_blank">University College London (UCL)</a>.</p>
+      
+      <p style="text-indent: 3ch;">My technical work spans full-stack web development, backend architecture, Linux server deployment, data and AI pipelines, and adaptive-learning systems. IREducation has received support through the Google for Startups programme, and our work combines interactive lessons, adaptive assessment, AI-supported feedback, and performance analytics.</p>
+      
+      <p style="text-indent: 3ch;">I am also the author of <em>Advanced Statistics for Edexcel A-Level: Core, Further &amp; STEP in One Volume</em>, a 22-chapter textbook used by students at more than ten schools, including several that have adopted it as a main teaching resource. I am currently preparing a seven-title <em>Further Mathematics for CCEA A-Level</em> series covering the complete Pure Mathematics course and every optional pathway; the Statistics volume is scheduled for late 2026, with the wider series expected in 2027.</p>
+
+      <p style="text-indent: 3ch;">Beyond education, I passed CFA Program Level I in 2026 and completed a summer internship in Valuation, Modelling &amp; Economics at EY Hong Kong. I also write a column for the <em>Hong Kong Economic Journal</em> on emerging technology and societal trends, and undertake consultancy work for private schools and university applicants.</p>
+      
+      <p style="text-indent: 3ch;">For more information or corrections on my website, please contact me at <a href="mailto:isaacteng@ireducation.org" target="_blank">isaacteng@ireducation.org</a>. I look forward to hearing from you.</p>
+    </div>
+    <div class="header-actions">
+      <a href="isaac-teng-cv.pdf" class="btn" target="_blank">Curriculum Vitae (PDF)</a>
+    </div>
+  </header>
+
+  <section class="book-feature" id="book" aria-labelledby="book-title">
+    <div class="book-grid">
+      <img class="book-cover-img" src="statistics-book-cover.jpg" width="2584" height="3375" loading="lazy" alt="Cover of Advanced Statistics for Edexcel A-Level by Isaac Chit Hang Teng" />
+
+      <div class="book-copy">
+        <div class="eyebrow">Featured publication</div>
+        <h2 id="book-title">The complete A-Level Statistics textbook</h2>
+        <p class="book-standfirst">One coherent route from foundational probability to advanced inference—written for ambitious students, STEP candidates, teachers, and independent learners.</p>
+
+        <div class="book-facts" aria-label="Book highlights">
+          <div><strong>22 chapters</strong><span>from fundamentals to university-level rigour</span></div>
+          <div><strong>3 pathways</strong><span>A-Level, Further Mathematics, and STEP</span></div>
+          <div><strong>10+ schools</strong><span>already using the book</span></div>
+        </div>
+
+        <p>The book combines worked examples, misconception warnings, graded exercises, mixed reviews, and three complete sample papers with detailed solutions. “Beyond the Syllabus” sections connect the course to Bayesian statistics, machine learning, quantum mechanics, and financial mathematics.</p>
+        <p>Developed in conjunction with IRMaths, it can be used alongside a complete set of lesson slides, assignments, and tests. Published by IREducation Inc.</p>
+
+        <div class="edition-links" aria-label="Book editions on Amazon UK">
+          <a class="btn" href="https://www.amazon.co.uk/dp/1066618402" target="_blank" rel="noopener">Complete Print Edition<span class="edition-isbn">ISBN 978-1-0666184-0-8</span></a>
+          <a class="btn" href="https://www.amazon.co.uk/dp/1066618410" target="_blank" rel="noopener">First Year<span class="edition-isbn">ISBN 978-1-0666184-1-5</span></a>
+          <a class="btn" href="https://www.amazon.co.uk/dp/1066618429" target="_blank" rel="noopener">Second Year<span class="edition-isbn">ISBN 978-1-0666184-2-2</span></a>
+        </div>
+        <p class="edition-note">An electronic version can be found <a href="https://www.amazon.co.uk/dp/B0GX34Z6Q9" target="_blank" rel="noopener">here</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="projects-container">
+    
+    <section class="project">
+      <div class="description">
+        <h2>IREducation Ltd.</h2>
+        <p>IREducation Ltd. bridges rigorous educational publishing with modern learning technology. Headquartered in Hong Kong and operating across China and the UK through Oxford Advanced Learning, it develops unified print and digital systems for STEM education.</p>
+        <p>I lead the company’s product architecture, curriculum development, and software deployment across IRMaths, TeacherSearch, and the wider IRSeries. Our platforms pair structured, curriculum-aligned content with interactive assessment, context-aware AI support, and teacher-facing performance insights.</p>
+        <a href="https://ireducation.org/" target="_blank" class="btn">Visit IREducation</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://ireducation.org/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="description">
+        <h2>IRMaths by IREducation</h2>
+        <p>IRMaths is a live Edexcel A-Level Mathematics platform combining structured lessons across Pure Mathematics, Statistics, and Mechanics with adaptive assessment, step-by-step solutions, and performance analytics.</p>
+        <p>Its context-aware tutor can explain the lesson or question being viewed, check working, provide assessment-safe hints, and generate targeted follow-up practice. Completed assessment evidence supports focused remediation for students and class-level insights for teachers.</p>
+        <a href="https://irmaths.ireducation.org/" target="_blank" class="btn">Visit IRMaths</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://irmaths.ireducation.org/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="description">
+        <h2>Mathematics Blog</h2>
+        <p>On my mathematics blog, I write about various topics I find interesting, ranging from group theory to quantum mechanics and computer science. I hope to inspire more students to explore the beauty and depth of these fields, encouraging curiosity, critical thinking, and a passion for understanding the underlying structures that shape our world.</p>
+        <a href="https://maths.isaacteng.com/" target="_blank" class="btn">Visit My Blog</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://maths.isaacteng.com/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="view-more-container">
+    <a href="website-demos" class="view-more-link">
+      <img src="assets/hand-pointer.png" alt="Pointer icon" class="pointer-icon" />
+      View More Website Demos
+    </a>
+  </div>
+
+  <footer>
+    <p>Contact me at <a href="mailto:isaacteng@ireducation.org">isaacteng@ireducation.org</a></p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/isaacteng-ch/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/isaactengch/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://substack.isaacteng.com" title="Substack" target="_blank"><i class="fa-solid fa-feather"></i></a>
+      <a href="https://www.youtube.com/@IREducationInc" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
