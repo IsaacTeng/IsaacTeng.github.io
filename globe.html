@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IREducation Globe</title>
+  <style>
+    html, body { margin: 0; overflow: hidden; height: 100%; }
+    #globeViz { width: 100vw; height: 100vh; }
+  </style>
+
+  <script src="https://unpkg.com/globe.gl"></script>
+</head>
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    const allLabels = [
+      { lat: 51.7520, lng: -1.2577, text: "Oxford" },
+      { lat: 22.3193, lng: 114.1694, text: "Hong Kong" },
+      { lat: 39.9042, lng: 116.4074, text: "China" }
+    ];
+
+    const allArcs = [
+      {
+        startLat: 22.3193, startLng: 114.1694, // Hong Kong
+        endLat: 51.7520, endLng: -1.2577,      // Oxford
+        color: ['#ff9900'],
+        locations: ['hong kong', 'oxford']
+      },
+      {
+        startLat: 22.3193, startLng: 114.1694, // Hong Kong
+        endLat: 39.9042, endLng: 116.4074,     // Beijing
+        color: ['#00ccff'],
+        locations: ['hong kong', 'china']
+      }
+    ];
+
+    // Parse ?loc= parameter (supports comma-separated values, e.g. ?loc=oxford,hong+kong)
+    const params = new URLSearchParams(window.location.search);
+    const locParam = params.get('loc');
+
+    let labels = allLabels;
+    let arcs = allArcs;
+    let startView = { lat: 22.3193, lng: 114.1694, altitude: 1.5 }; // Default: Hong Kong
+
+    if (locParam) {
+      const selected = locParam.split(',').map(s => s.trim().toLowerCase());
+      labels = allLabels.filter(l => selected.includes(l.text.toLowerCase()));
+      // Only show arcs if both endpoints are in the selected locations
+      arcs = allArcs.filter(a => a.locations.every(loc => selected.includes(loc)));
+      // Only center on the location if there's exactly one
+      if (labels.length === 1) {
+        startView = { lat: labels[0].lat, lng: labels[0].lng, altitude: 1.5 };
+      }
+    }
+
+    const world = Globe()(document.getElementById('globeViz'))
+      .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg')
+      .bumpImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-topology.png')
+      .labelsData(labels)
+      .labelColor(() => 'orange')
+      .labelDotRadius(() => 0.5)
+      .labelSize(() => 1.4)
+      .labelAltitude(() => 0.01)
+      .arcsData(arcs)
+      .arcStroke(() => 0.5)
+      .arcAltitude(() => 0.2)
+      .arcDashLength(() => 0.4)
+      .arcDashGap(() => 1)
+      .arcDashInitialGap(() => Math.random())
+      .arcDashAnimateTime(() => 4000)
+      .pointOfView(startView, 2000);
+
+    // Auto-rotate after slight delay
+    setTimeout(() => {
+      const controls = world.controls();
+      if (controls) {
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.30;
+      }
+    }, 500);
+  </script>
+</body>
+</html>

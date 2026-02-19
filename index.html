@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Isaac Teng - Personal Site</title>
+  
+  <!-- Google Fonts for Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --text-main: #333333;
+      --text-muted: #555555;
+      --accent: #111111;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    /* Headings Font */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+    }
+
+    /* Header Section */
+    header {
+      padding: 4rem 1rem 4rem;
+      text-align: center;
+      background-color: var(--white);
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    header h1 {
+      margin: 0 0 1.5rem;
+      font-size: 3.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    .header-bio {
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+    }
+
+    .header-bio p {
+      margin-bottom: 1.2rem;
+    }
+
+    .header-bio a {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .header-bio a:hover {
+      color: #666;
+    }
+
+    /* Project Layout (Alternating) */
+    .projects-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+    }
+
+    .project {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 6rem;
+    }
+
+    /* Reverse every even project for a zig-zag look */
+    .project:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .description {
+      flex: 1;
+    }
+
+    .description h2 {
+      margin-top: 0;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .description p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Button Style for Links */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #444;
+      transform: translateY(-2px);
+    }
+
+    /* Iframe Previews */
+    .preview {
+      flex: 1.2;
+      height: 450px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: var(--white);
+      border: 1px solid #eaeaea;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* View More Section */
+    .view-more-container {
+      text-align: center;
+      margin: 0 auto 4rem;
+    }
+
+    .view-more-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.3s ease;
+    }
+
+    .view-more-link:hover {
+      opacity: 0.7;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .pointer-icon {
+      height: 1.2em;
+      width: auto;
+      margin-right: 0.5em;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #eeeeee;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      margin-top: 1.5rem;
+    }
+
+    .social-icons a {
+      margin: 0 0.75rem;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 900px) {
+      .project, .project:nth-child(even) {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        text-align: center;
+      }
+      
+      .header-bio {
+        text-align: left;
+        padding: 0 1rem;
+      }
+
+      .preview {
+        width: 100%;
+        height: 350px;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // Tell the browser not to remember scroll positions on page refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    // Scroll to top ONLY once when the main parent page initially loads
+    window.scrollTo(0, 0);
+  </script>
+
+  <header>
+    <h1>Isaac Teng’s Personal Site</h1>
+
+    <div class="header-bio" style="text-align: justify;">
+      <p>I am the founder of <a href="https://ireducation.org" target="_blank">IREducation Inc.</a>, a Hong Kong-based ed-tech firm, and also an MSci Mathematics and Physics student at <a href="https://ucl.ac.uk" target="_blank">University College London (UCL)</a>. I am the lead programmer for our products, with my main expertise lying in PHP development and backend server management, including deployment and maintenance of web applications.</p>
+      
+      <p style="text-indent: 3ch;">Alongside this, we have developed a suite of AI applications with core integration within our products — for this, we have been awarded a grant by the Google Startup Program. Ultimately, our goal is to harness AI not just to bridge existing educational gaps, but to actively shape the future of learning through innovation, accessibility, and academic excellence.</p>
+      
+      <p style="text-indent: 3ch;">I have also been the Chief Technology Officer (CTO) of <a href="https://kovi.com.hk" target="_blank">Kovi Inc.</a>, a Hong Kong and Shenzhen-based fashion start-up between October 2024 and December 2025.</p>
+      
+      <p style="text-indent: 3ch;">In addition to my entrepreneurial experiences, I am a columnist for the <a href="https://monthly.hkej.com" target="_blank">Hong Kong Economic Journal (HKEJ)</a> on emerging technological trends and hardware development. I have also taken up external consultancy work for private schools and university applicants.</p>
+      
+      <p style="text-indent: 3ch;">For more information or corrections on my website, please contact me at <a href="mailto:isaacteng@ireducation.org" target="_blank">isaacteng@ireducation.org</a>. I look forward to hearing from you.</p>
+    </div>
+  </header>
+
+  <main class="projects-container">
+    
+    <section class="project">
+      <div class="description">
+        <h2>IREducation Inc.</h2>
+        <p>IREducation (InteRactive Education) is an innovative education company based in Hong Kong, operating in China and the UK, where the latter is run under Oxford Advanced Learning. We are building a complete ecosystem that redefines the way students, teachers, and institutions engage with education.</p>
+        <p>With a strong focus on Mathematics, Sciences, and university preparation, our long-term vision is to become the leading educational corporation in the UK — an all-encompassing “educational emporium” offering tools for students, teachers, and institutions.</p>
+        <p>We aim to develop and deploy a suite of AI-driven tools, state-of-the-art digital platforms, and high-quality curricular content aligned with national standards. This initiative is designed not only to fill current educational gaps but to anticipate and shape the future of learning through innovation, accessibility, and academic excellence.</p>
+        <a href="https://ireducation.org/" target="_blank" class="btn">Visit IREducation</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://ireducation.org/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="description">
+        <h2>IRMaths by IREducation</h2>
+        <p>IRMaths, founded in 2024, aims to provide teachers and students with an interactive approach to studying mathematics. As a Platform for Active Learning (PAL), we offer A-Level Maths lessons featuring engaging, structured content designed to reinforce understanding through interactive exercises, step-by-step solutions, and real-time feedback.</p>
+        <p>Through IRMaths, we aspire to transform mathematics education by fostering independent thinking, improving student engagement, and equipping educators with the tools to deliver effective, data-driven instruction in a modern digital environment.</p>
+        <a href="https://irmaths.ireducation.org/" target="_blank" class="btn">Visit IRMaths</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://irmaths.ireducation.org/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+    <section class="project">
+      <div class="description">
+        <h2>Mathematics Blog</h2>
+        <p>On my mathematics blog, I write about various topics I find interesting, ranging from group theory to quantum mechanics and computer science. I hope to inspire more students to explore the beauty and depth of these fields, encouraging curiosity, critical thinking, and a passion for understanding the underlying structures that shape our world.</p>
+        <a href="https://maths.isaacteng.com/" target="_blank" class="btn">Visit My Blog</a>
+      </div>
+      <div class="preview">
+        <iframe src="https://maths.isaacteng.com/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="view-more-container">
+    <a href="website-demos" class="view-more-link">
+      <img src="assets/hand-pointer.png" alt="Pointer icon" class="pointer-icon" />
+      View More Website Demos
+    </a>
+  </div>
+
+  <footer>
+    <p>Contact me at <a href="mailto:isaacteng@ireducation.org">isaacteng@ireducation.org</a></p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/isaacteng-ch/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/isaactengch/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://substack.isaacteng.com" title="Substack" target="_blank"><i class="fa-solid fa-feather"></i></a> 
+      <a href="https://www.youtube.com/@IREducationInc" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
