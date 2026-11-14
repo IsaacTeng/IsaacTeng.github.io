@@ -26,42 +26,38 @@
     
     // Scroll to top ONLY once when the main parent page initially loads
     window.scrollTo(0, 0);
+
+    // Lets CSS hide sections for the reveal animation only when JavaScript is running
+    document.documentElement.classList.add('js');
   </script>
 
-  <header>
+  <header class="hero">
+    <div class="header-inner">
     <h1>Isaac Teng <span class="zh-name" lang="zh-Hant">(鄧哲恆)</span></h1>
-    <p class="header-tagline">Founder · Author · Educational Technology Developer</p>
-
-    <div class="header-bio" style="text-align: justify;">
-      <p>I am the founder and lead developer of <a href="https://ireducation.org" target="_blank">IREducation Ltd.</a>, a Hong Kong-based educational publishing and technology company whose UK activities are developed through Oxford Advanced Learning. I lead product strategy, software architecture, and curriculum development across IRMaths and IREducation’s wider print and digital portfolio. I am also an MSci Mathematics and Physics student at <a href="https://ucl.ac.uk" target="_blank">University College London (UCL)</a>.</p>
-      
-      <p style="text-indent: 3ch;">My technical work spans full-stack web development, backend architecture, Linux server deployment, data and AI pipelines, and adaptive-learning systems. IREducation has received support through the Google for Startups programme, and our work combines interactive lessons, adaptive assessment, AI-supported feedback, and performance analytics.</p>
-      
-      <p style="text-indent: 3ch;">I am also the author of <em>Advanced Statistics for Edexcel A-Level: Core, Further &amp; STEP in One Volume</em>, a 22-chapter textbook covering the full Edexcel A-Level Statistics (9ST0) specification, used by students at more than ten schools, including several that have adopted it as a main teaching resource. I am currently preparing a seven-title <em>Further Mathematics for CCEA A-Level</em> series covering the full Pure Mathematics course and every optional pathway. Two volumes, <em>Statistics</em> and <em>Discrete &amp; Decision Mathematics</em>, are scheduled for early December 2026, with the remaining five following in 2027.</p>
-
-      <p style="text-indent: 3ch;">Beyond education, I passed Level I of the CFA Program in 2026 and completed a summer internship in Valuation, Modelling &amp; Economics at EY Hong Kong. I also write a column for the <em>Hong Kong Economic Journal</em> on emerging technology and societal trends, and undertake consultancy work for private schools and university applicants.</p>
-      
-      <p style="text-indent: 3ch;">For more information or corrections on my website, please contact me at <a href="mailto:isaacteng@ireducation.org" target="_blank">isaacteng@ireducation.org</a>. I look forward to hearing from you.</p>
+    <div class="header-intro">
+      <div class="header-bio">
+        <p>Hi, I’m Isaac. I study Mathematics and Physics at <a href="https://ucl.ac.uk" target="_blank">UCL</a>, and run <a href="https://ireducation.org" target="_blank">IREducation</a>, a small company making books and software for courses the big publishers tend to skip.</p>
+        <p>I also write about Hong Kong’s economy for <em>HKEJ Monthly</em>. Away from all that, I preserve and mod old games, read omnivorously, and collect (strictly herbivorous) elePHPants, the PHP mascot. This one is very good at supervising proofreading.</p>
+        <p>If anything here is useful to you, do get in touch.</p>
+      </div>
+      <img class="header-photo" src="assets/images/elephpant.jpg" width="2048" height="1624" alt="An orange PHP elePHPant plush in front of a laptop showing the Advanced Statistics for Edexcel A-Level manuscript" />
     </div>
+
     <div class="header-actions">
       <a href="isaac-teng-cv.pdf" class="btn" target="_blank">Curriculum Vitae (PDF)</a>
     </div>
+    </div>
+    <a class="scroll-cue" href="#book" aria-label="Scroll down"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></a>
   </header>
 
   <section class="book-feature" id="book" aria-labelledby="book-title">
-    <div class="book-grid">
-      <img class="book-cover-img" src="statistics-book-cover.jpg" width="2584" height="3375" loading="lazy" alt="Cover of Advanced Statistics for Edexcel A-Level by Isaac Chit Hang Teng" />
+    <div class="book-grid reveal">
+      <img class="book-cover-img" src="assets/images/statistics-book-cover-web.jpg" width="1232" height="1600" loading="lazy" alt="Cover of Advanced Statistics for Edexcel A-Level by Isaac Chit Hang Teng" />
 
       <div class="book-copy">
         <div class="eyebrow">Featured publication</div>
-        <h2 id="book-title">The complete Edexcel A-Level Statistics textbook</h2>
-        <p class="book-standfirst">Full coverage of Edexcel A-Level Statistics (9ST0), from foundational probability to advanced inference—with supplementary material for A-Level Mathematics, Further Mathematics, and STEP.</p>
-
-        <div class="book-facts" aria-label="Book highlights">
-          <div><strong>22 chapters</strong><span>from fundamentals to university-level rigour</span></div>
-          <div><strong>Full 9ST0</strong><span>specification, plus Maths, Further Maths, and STEP supplements</span></div>
-          <div><strong>10+ schools</strong><span>already using the book</span></div>
-        </div>
+        <h2 id="book-title">The first dedicated textbook for Edexcel A-Level Statistics</h2>
+        <p class="book-standfirst">Written for the standalone Edexcel A-Level Statistics qualification (9ST0), which had no textbook of its own. It covers the full course, from foundational probability to advanced inference, with supplementary material for A-Level Mathematics, Further Mathematics, and STEP.</p>
 
         <p>The book combines worked examples, misconception warnings, graded exercises, mixed reviews, and three complete sample papers with detailed solutions. “Beyond the Syllabus” sections connect the course to Bayesian statistics, machine learning, quantum mechanics, and financial mathematics.</p>
         <p>Developed in conjunction with IRMaths, it can be used alongside a complete set of lesson slides, assignments, and tests. Published by IREducation Inc.</p>
@@ -72,17 +68,52 @@
           <a class="btn" href="https://www.amazon.co.uk/dp/1066618429" target="_blank" rel="noopener">Second Year<span class="edition-isbn">ISBN 978-1-0666184-2-2</span></a>
         </div>
         <p class="edition-note">An electronic version can be found <a href="https://www.amazon.co.uk/dp/B0GX34Z6Q9" target="_blank" rel="noopener">here</a>.</p>
+        <p class="edition-note"><strong>Coming 1 December 2026:</strong> <em>Statistics</em> and <em>Discrete &amp; Decision Mathematics</em>, the first two titles in the seven-volume <em>Further Mathematics for CCEA A-Level</em> series, which covers the full Pure Mathematics course and every optional pathway.</p>
       </div>
     </div>
   </section>
 
-  <main class="projects-container">
-    
-    <section class="project">
+  <section class="commentary-feature" id="commentary" aria-labelledby="commentary-title">
+    <div class="commentary-grid reveal">
+      <div class="commentary-intro">
+        <div class="eyebrow">Commentary</div>
+        <h2 id="commentary-title">Hong Kong’s economy and markets</h2>
+        <p class="commentary-standfirst">A column for <em>HKEJ Monthly</em>, published in Chinese, with additional op-eds in <em>The Standard</em>. English technical notes accompany some columns on Substack.</p>
+        <div class="commentary-links">
+          <a class="btn" href="https://monthly.hkej.com" target="_blank" rel="noopener">HKEJ Monthly</a>
+          <a class="btn btn-secondary" href="https://substack.isaacteng.com" target="_blank" rel="noopener">Substack</a>
+        </div>
+      </div>
+
+      <ul class="commentary-list">
+        <li>
+          <strong>Hong Kong among the middle powers</strong>
+          <span>How Hong Kong can use its separate WTO membership and APEC participation. Licensed by the Civil Service College for staff development.</span>
+        </li>
+        <li>
+          <strong>Financial-market governance</strong>
+          <span>A three-part series: the 1998 attack on the currency board, the Jane Street case in India, and incentives behind poor-quality IPOs in Hong Kong.</span>
+        </li>
+        <li>
+          <strong>Youth unemployment</strong>
+          <span>A two-part series on how young people respond to Hong Kong’s labour market, and the structural issues beneath those responses.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <main class="projects-container" id="company">
+
+    <div class="section-heading reveal">
+      <div class="eyebrow">Company</div>
+      <h2>IREducation and its products</h2>
+    </div>
+
+    <section class="project reveal">
       <div class="description">
         <h2>IREducation Ltd.</h2>
-        <p>IREducation Ltd. bridges rigorous educational publishing with modern learning technology. Headquartered in Hong Kong and operating across China and the UK through Oxford Advanced Learning, it develops unified print and digital systems for STEM education.</p>
-        <p>I lead the company’s product architecture, curriculum development, and software deployment across IRMaths, TeacherSearch, and the wider IRSeries. Our platforms pair structured, curriculum-aligned content with interactive assessment, context-aware AI support, and teacher-facing performance insights.</p>
+        <p>IREducation publishes textbooks and learning software for STEM courses that mainstream publishers tend to overlook. It is based in Hong Kong, works in the UK through Oxford Advanced Learning, and has been supported by the Google for Startups programme.</p>
+        <p>I write the books and build the company’s software, including IRMaths and TeacherSearch.</p>
         <a href="https://ireducation.org/" target="_blank" class="btn">Visit IREducation</a>
       </div>
       <div class="preview">
@@ -90,11 +121,11 @@
       </div>
     </section>
 
-    <section class="project">
+    <section class="project reveal">
       <div class="description">
         <h2>IRMaths by IREducation</h2>
-        <p>IRMaths is a live Edexcel A-Level Mathematics platform combining structured lessons across Pure Mathematics, Statistics, and Mechanics with adaptive assessment, step-by-step solutions, and performance analytics.</p>
-        <p>Its context-aware tutor can explain the lesson or question being viewed, check working, provide assessment-safe hints, and generate targeted follow-up practice. Completed assessment evidence supports focused remediation for students and class-level insights for teachers.</p>
+        <p>IRMaths is our online platform for Edexcel A-Level Mathematics, with lessons across Pure Mathematics, Statistics, and Mechanics, practice questions, and worked solutions.</p>
+        <p>Its built-in tutor can explain whatever lesson or question a student is looking at, check their working, and give hints without handing over answers during assessments. Teachers can see where their class is struggling.</p>
         <a href="https://irmaths.ireducation.org/" target="_blank" class="btn">Visit IRMaths</a>
       </div>
       <div class="preview">
@@ -102,23 +133,12 @@
       </div>
     </section>
 
-    <section class="project">
-      <div class="description">
-        <h2>Mathematics Blog</h2>
-        <p>On my mathematics blog, I write about various topics I find interesting, ranging from group theory to quantum mechanics and computer science. I hope to inspire more students to explore the beauty and depth of these fields, encouraging curiosity, critical thinking, and a passion for understanding the underlying structures that shape our world.</p>
-        <a href="https://maths.isaacteng.com/" target="_blank" class="btn">Visit My Blog</a>
-      </div>
-      <div class="preview">
-        <iframe src="https://maths.isaacteng.com/" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
-      </div>
-    </section>
-
   </main>
 
   <div class="view-more-container">
     <a href="website-demos" class="view-more-link">
-      <img src="assets/hand-pointer.png" alt="Pointer icon" class="pointer-icon" />
-      View More Website Demos
+      <img src="assets/images/hand-pointer.png" alt="Pointer icon" class="pointer-icon" />
+      See Other Projects
     </a>
   </div>
 
@@ -131,5 +151,49 @@
       <a href="https://www.youtube.com/@IREducationInc" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Introduction slides down and fades as the page scrolls over it
+      const intro = document.querySelector('.header-inner');
+      const cue = document.querySelector('.scroll-cue');
+      if (intro && !reduceMotion) {
+        let pending = false;
+        const update = () => {
+          const height = window.innerHeight;
+          const y = Math.min(window.scrollY, height);
+          const progress = y / height;
+          intro.style.transform = `translateY(${y * 0.35}px)`;
+          intro.style.opacity = String(Math.max(0, 1 - progress * 1.2));
+          if (cue) cue.style.opacity = String(Math.max(0, 1 - progress * 4));
+          pending = false;
+        };
+        window.addEventListener('scroll', () => {
+          if (!pending) {
+            pending = true;
+            requestAnimationFrame(update);
+          }
+        }, { passive: true });
+      }
+
+      // Sections slide up into place as they enter the screen
+      const sections = document.querySelectorAll('.reveal');
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        sections.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      sections.forEach((el) => observer.observe(el));
+    })();
+  </script>
 </body>
 </html>

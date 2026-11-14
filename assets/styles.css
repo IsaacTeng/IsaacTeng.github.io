@@ -1,11 +1,13 @@
 :root {
-  --bg-color: #f8f9fa;
+  --bg-color: #f6f2ea;
   --text-main: #333333;
   --text-muted: #555555;
   --accent: #111111;
   --book-accent: #8f2f24;
   --book-paper: #f4ead5;
   --white: #ffffff;
+  --surface: #fbf8f2;
+  --line: #e7e0d3;
 }
 
 body {
@@ -26,8 +28,8 @@ h1, h2, h3 {
 header {
   padding: 4rem 1rem 4rem;
   text-align: center;
-  background-color: var(--white);
-  border-bottom: 1px solid #eaeaea;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--line);
 }
 
 header h1 {
@@ -38,12 +40,12 @@ header h1 {
 
 /* Chinese name set in TW-Kai, matching the CV. The font file is subset to
    these three glyphs only; regenerate it if the characters change:
-     pyftsubset TW-Kai-98_1.ttf --text="鄧哲恆" --flavor=woff2 --output-file=assets/tw-kai-name.woff2
+     pyftsubset TW-Kai-98_1.ttf --text="鄧哲恆" --flavor=woff2 --output-file=assets/fonts/tw-kai-name.woff2
    TW-Kai (全字庫正楷體) (c) 2018 National Development Council, Taiwan;
    Open Government Data License v1.0 (https://data.gov.tw/en/license). */
 @font-face {
   font-family: 'TW-Kai Name';
-  src: url('tw-kai-name.woff2') format('woff2');
+  src: url('fonts/tw-kai-name.woff2') format('woff2');
   font-display: swap;
   unicode-range: U+9127, U+54F2, U+6046;
 }
@@ -54,18 +56,91 @@ header h1 {
   letter-spacing: 0;
 }
 
-.header-tagline {
-  margin: 0 0 1.75rem;
+/* Full-screen introduction (homepage only) */
+header.hero {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header-inner {
+  will-change: transform, opacity;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.scroll-cue:hover {
+  color: var(--accent);
+}
+
+/* Sections slide up into view (only when JavaScript has added .js) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .scroll-cue i {
+    display: block;
+    animation: cue-bounce 2s ease-in-out infinite;
+  }
+}
+
+@keyframes cue-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Introduction: text beside a personal photo */
+.header-intro {
+  max-width: 960px;
+  margin: 2rem auto 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.header-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Same lift-on-hover as the book cover */
+.header-photo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.18);
 }
 
 .header-bio {
-  max-width: 750px;
-  margin: 0 auto;
   text-align: left;
   font-size: 1.05rem;
   color: var(--text-muted);
@@ -101,7 +176,7 @@ header h1 {
 }
 
 .btn-secondary:hover {
-  background: #f1f1f1;
+  background: #efe9de;
   border-color: #b8b8b8;
 }
 
@@ -119,9 +194,30 @@ header h1 {
   margin-bottom: 6rem;
 }
 
-/* Reverse every even project for a zig-zag look */
-.project:nth-child(even) {
+/* Reverse every even project for a zig-zag look.
+   nth-of-type counts only <section> rows, so the section heading doesn't shift the pattern. */
+.project:nth-of-type(even) {
   flex-direction: row-reverse;
+}
+
+.section-heading {
+  text-align: center;
+  margin: 0 auto 4rem;
+}
+
+.section-heading .eyebrow {
+  color: var(--book-accent);
+}
+
+/* A label used on its own as the group title (Other Projects page) */
+.section-heading .eyebrow:only-child {
+  font-size: 1.1rem;
+}
+
+.section-heading h2 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
 }
 
 .description {
@@ -165,8 +261,8 @@ header h1 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   border-radius: 16px;
   overflow: hidden;
-  background-color: var(--white);
-  border: 1px solid #eaeaea;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
 }
 
 iframe {
@@ -230,28 +326,6 @@ iframe {
   max-width: 740px;
 }
 
-.book-facts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding: 1.5rem 0;
-  margin: 1.75rem 0;
-  border-top: 1px solid #44403a;
-  border-bottom: 1px solid #44403a;
-}
-
-.book-facts strong {
-  display: block;
-  color: #ffffff;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-}
-
-.book-facts span {
-  color: #bcb3a5;
-  font-size: 0.88rem;
-}
-
 .book-copy > p:not(.book-standfirst) {
   color: #cfc6b7;
   max-width: 760px;
@@ -300,6 +374,80 @@ iframe {
   color: #ffffff;
 }
 
+/* Commentary block: light counterpart to the dark book feature */
+.commentary-feature {
+  background: var(--book-paper);
+  color: #2b2620;
+  padding: 5.5rem max(1rem, calc((100% - 1168px) / 2));
+}
+
+.commentary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.commentary-intro .eyebrow {
+  color: var(--book-accent);
+}
+
+.commentary-intro h2 {
+  margin: 0.5rem 0 1.25rem;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.commentary-standfirst {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: #4a4238;
+}
+
+.commentary-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.commentary-links .btn-secondary {
+  border-color: #c9bda6;
+}
+
+.commentary-links .btn-secondary:hover {
+  background: #ebdfc6;
+}
+
+.commentary-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.commentary-list li {
+  padding: 1.25rem 0;
+  border-top: 1px solid #d8ccb4;
+}
+
+.commentary-list li:last-child {
+  border-bottom: 1px solid #d8ccb4;
+}
+
+.commentary-list strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #1d1914;
+}
+
+.commentary-list span {
+  display: block;
+  margin-top: 0.3rem;
+  color: #5a5146;
+}
+
 /* View More Section */
 .view-more-container {
   text-align: center;
@@ -332,7 +480,7 @@ iframe {
 footer {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: #eeeeee;
+  background-color: #ede7db;
   color: var(--text-muted);
 }
 
@@ -365,7 +513,7 @@ footer a:hover {
 
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
-  .project, .project:nth-child(even) {
+  .project, .project:nth-of-type(even) {
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 4rem;
@@ -403,12 +551,43 @@ footer a:hover {
     margin-right: auto;
   }
 
-  .book-facts {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
   .edition-links {
     justify-content: center;
   }
+
+  .commentary-grid,
+  .header-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .header-photo {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .commentary-intro {
+    text-align: center;
+  }
+
+  .commentary-links {
+    justify-content: center;
+  }
+}
+
+/* Screenshot previews, for sites that refuse to be embedded */
+.preview-image {
+  display: block;
+}
+
+.preview-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s ease;
+}
+
+.preview-image:hover img {
+  transform: scale(1.02);
 }

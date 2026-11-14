@@ -4,9 +4,9 @@ I am the founder of [IREducation Ltd.](https://ireducation.org), a Hong Kong-bas
 
 Alongside this we have developed a suite of AI applications with core integration within our products - for this we have received support through the Google for Startups programme. Ultimately, our goal is to harness AI not just to bridge existing educational gaps, but to actively shape the future of learning through innovation, accessibility, and academic excellence.
 
-I am also the author of *Advanced Statistics for Edexcel A-Level: Core, Further & STEP in One Volume*, a complete textbook for Edexcel A-Level Statistics (9ST0) now used at more than ten schools. We are currently preparing a seven-title *Further Mathematics for CCEA A-Level* series covering the full Pure Mathematics course and every optional pathway. Two volumes, *Statistics* and *Discrete & Decision Mathematics*, are scheduled for early December 2026, with the remaining five following in 2027.
+I am also the author of *Advanced Statistics for Edexcel A-Level: A Comprehensive Guide to Core, Further and STEP Statistics*, a complete textbook for Edexcel A-Level Statistics (9ST0) now used at more than ten schools. We are currently preparing a seven-title *Further Mathematics for CCEA A-Level* series covering the full Pure Mathematics course and every optional pathway. Two volumes, *Statistics* and *Discrete & Decision Mathematics*, are scheduled for early December 2026, with the remaining five following in 2027.
 
-In addition to my entrepreneurial experiences, I am a columnist for the [Hong Kong Economic Journal (HKEJ)](https://monthly.hkej.com) on emerging technological trends and hardware development. I have also taken up external consultancy work for private schools and university applicants.
+In addition to my entrepreneurial experiences, I am an [HKEJ Monthly](https://monthly.hkej.com) columnist on Hong Kong's economy and markets; a column on Hong Kong's role in the WTO and APEC was licensed by the Civil Service College for staff development. I have also taken up external consultancy work for private schools and university applicants.
 
 For more information or corrections on my website, please contact me at [isaacteng@ireducation.org](mailto:isaacteng@ireducation.org). I look forward to hearing from you. 
 
